@@ -25,7 +25,8 @@ A full-stack web dashboard to manage employees and visualize data using charts.
 - Chart.js
 
 ## 📸 Screenshots
-(Add screenshots here)
+
+![Dashboard](screenshots/dashboard.png)
 
 ## ▶️ How to Run
 
