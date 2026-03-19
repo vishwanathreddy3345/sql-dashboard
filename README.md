@@ -26,7 +26,9 @@ A full-stack web dashboard to manage employees and visualize data using charts.
 
 ## 📸 Screenshots
 
+![Login Page](screenshots/loginpage.png)
 ![Dashboard](screenshots/dashboard.png)
+![Employees Details](screenshots/employeesdetails.png)
 
 ## ▶️ How to Run
 
