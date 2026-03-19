@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Detail</title>
+</head>
+<body>
+
+<h2>Employee Details</h2>
+
+<p>Name: {{ employee.name }}</p>
+<p>Department: {{ employee.department }}</p>
+<p>Role: {{ employee.role }}</p>
+<p>Salary: {{ employee.salary }}</p>
+<p>City: {{ employee.city }}</p>
+
+<a href="{{ url_for('employees') }}">Back</a>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f6f9;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 15px 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .top-bar {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .btn-add {
+            background: #27ae60;
+        }
+
+        .btn-logout {
+            background: #e74c3c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .edit {
+            background: #2980b9;
+        }
+
+        .delete {
+            background: #c0392b;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('employees') }}">Employees</a>
+</nav>
+
+<div class="container">
+
+    <h2>Employees</h2>
+
+    <div class="top-bar">
+        <a href="{{ url_for('add_employee') }}" class="btn btn-add">+ Add Employee</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-logout">Logout</a>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-add">⬅ Back to Dashboard</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Role</th>
+            <th>Salary</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for emp in employees %}
+        <tr>
+            <td>
+                <a href="{{ url_for('employee_detail', id=emp.id) }}">
+                    {{ emp.name }}
+                </a>
+            </td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.role }}</td>
+            <td>₹ {{ emp.salary }}</td>
+            <td>{{ emp.city }}</td>
+            <td>
+                <a href="{{ url_for('edit_employee', id=emp.id) }}" class="action-btn edit">Edit</a>
+                <a href="{{ url_for('delete_employee', id=emp.id) }}" class="action-btn delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>
