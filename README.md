@@ -1,9 +1,7 @@
 
 ---
 
-# 📄 ✅ README 2 — SQL DASHBOARD
-
-👉 Create `README.md` in second project:
+ SQL DASHBOARD
 
 ```markdown
 # 📊 Employee SQL Dashboard
